@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo HTML Formulaire - vente de t-shirt</title>
+    <style>
+        form {
+            width: 500px;
+        }
+        datalist {
+            display:flex;
+        }
+        datalist option {
+            margin-right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="" method="post" enctype="multipart/form-data">
+            <fieldset id="client">
+                <legend>Client</legend>
+                <div>
+                    <label for="name">Nom et prénom : </label>
+                    <input type="text" name="name" id="name" placeholder="Nom et prénom" pattern="^([A-Z]+)\s([A-Z]{1}[a-z]+)$">
+                </div>
+                <div>
+                    <label for="adress">Adresse : </label>
+                    <input type="text" name="adress" id="adress">
+                </div>
+                <div>
+                    <label for="postal">Code Postal : </label>
+                    <input type="text" name="postal" id="postal" pattern="^[0-9]{5}$" size="4">
+                </div>
+                <div>
+                    <label for="pays">Pays : </label>
+                    <input type="text" name="pays" id="pays" value="France" readonly>
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Commande</legend>
+                <div>
+                    <label for="model">Modèle : </label>
+                    <input type="text" name="model" id="model" value="Road 66">
+                </div>
+                <div>
+                    <label for="size">Taille : </label>
+                    <br>
+                    <input type="range" name="size" id="size" list="taille">
+                    <datalist id="taille">
+                        <option value="0" label="S"></option>
+                        <option value="1" label="M"></option>
+                        <option value="2" label="L"></option>
+                        <option value="3" label="XL"></option>
+                    </datalist>
+                    
+                </div>
+                <div>
+                    <label for="quantity">Code Postal : </label>
+                    <input type="number" name="quantity" id="quantity" value="1" min="1" max="165" step="3">
+                </div>
+            </fieldset>
+            <br>
+            <button>Commander</button>
+            <button type="reset">Recommencer</button>
+        </form>
+    </main>
+</body>
+
+</html>
